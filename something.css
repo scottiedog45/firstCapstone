@@ -39,8 +39,8 @@ p {
 }
 
 #map {
-  height: 200px;
-  width: 300px;
+  height: 450px;
+  width: 500px;
   margin-top: 30px;
   float: left;
   border-radius: 3%;
@@ -53,16 +53,17 @@ p {
   margin-top: 30px;
 }
 
-#test {
-  height: 100px;
-  width: 100px;
-  border-color: black;
-  border-style: solid;
-  background-color: red;
-  border-style: border-box;
-  visibility: hidden;
-}
-
 ::placeholder {
   text-align: center;
+}
+
+@media only screen 
+  and (min-device-width : 375px) 
+  and (max-device-width : 667px) { 
+  body {
+    font-size: 50px;
+  }
+  
+  #map {
+    width: 100%;
 }
