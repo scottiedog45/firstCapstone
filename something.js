@@ -42,10 +42,20 @@ function displayMap(data) {
 
 function displayWeather(data) {
   let returnedWeatherInfo = data;
+  console.log(data);
   $('#weather').html(
-      `<p>${returnedWeatherInfo.list[1].weather[0].main}</p>
-      <img src="http://openweathermap.org/img/w/${returnedWeatherInfo.list[1].weather[0].icon}.png">
-      <p>${returnedWeatherInfo.list[1].main.temp} &#8457;</p>`);
+      `<p>now:</p>
+      <p class= "weather-description">${returnedWeatherInfo.list[0].weather[0].main}</p>
+      <img class="weather-pic" src="http://openweathermap.org/img/w/${returnedWeatherInfo.list[1].weather[0].icon}.png">
+      <p class="weather-temp">${returnedWeatherInfo.list[0].main.temp} &#8457;</p>
+      <hr>
+      <p>tomorrow:</p>
+      <p class= "weather-description">${returnedWeatherInfo.list[1].weather[0].main}</p>
+      <img class="weather-pic" src="http://openweathermap.org/img/w/${returnedWeatherInfo.list[2].weather[0].icon}.png">
+      <p class="weather-temp">${returnedWeatherInfo.list[1].main.temp} &#8457;</p>
+      
+
+`);
     
     //for result loop through and do the following: main, icon, high, low, windspeed, and either day of week or date
     //format and display results *on hard touch with iphone? scroll over with web app? 
@@ -61,7 +71,7 @@ function initMap(a, b) {
 
   map = new google.maps.Map(document.getElementById('map'), {
     center: city,
-    zoom: 15
+    zoom: 13
   });
 
   infowindow = new google.maps.InfoWindow();
@@ -82,6 +92,7 @@ function defineMarkerLocations(results, status) {
 }
 
 function createMarker(place) {
+  console.log(place);
   var placeLoc = place.geometry.location;
   var marker = new google.maps.Marker({
     map: map,
@@ -99,6 +110,7 @@ function zipToData() {
     $('#zip-code-submit-button').on('click', function() {
         event.preventDefault();
         let zipCode = $('#user-zip-code').val();
+        $('#map').addClass("slideRight");
         getGeoCodingData(zipCode, displayMap);
         getWeatherInfo(zipCode, displayWeather);
     });

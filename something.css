@@ -1,6 +1,3 @@
-/*implement responsive design, and stack elements when in iphone*/
-
-
 body {
   background-color: #de5454;
   color: white;
@@ -13,24 +10,28 @@ h1 {
 
 form {
   text-align: center;
+  margin-top: 30px;
 }
 
 input {
   height: 30px;
   text-align: center;
   font-size: 14px;
-  border-radius: 20%
 }
 
 button {
   height: 25px;
   margin-left: 20px;
-  border-radius: 20%;
+  border-radius: 5%;
   background-color: white;
   font-size: 12px;
 }
 
-p {
+hr {
+  width: 100px;
+}
+
+.info {
   text-align: center;
 }
 
@@ -45,12 +46,23 @@ p {
   float: left;
   border-radius: 3%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  text-align: center;
+  color: black;
+  margin-left: 150px;
+  margin-right: 20px;
 }
 
 #weather {
   text-align: center;
   margin-top: 30px;
+  display: inline-block;
+}
+
+.weather-description {
+  margin-bottom: 0px;
+}
+
+.weather-temp {
+  margin-top: 0px;
 }
 
 ::placeholder {
@@ -60,10 +72,52 @@ p {
 @media only screen 
   and (min-device-width : 375px) 
   and (max-device-width : 667px) { 
-  body {
-    font-size: 50px;
-  }
+    
+    h1 {
+      letter-spacing: 17px;
+      font-size: 100px;
+    }
+    
+    input {
+      width: 700px;
+      height: 100px;
+      border-radius: 0;
+      font-size: 50px;
+    }
+    
+    button {
+      width: 200px;
+      height: 70px;
+      font-size: 50px;
+      display: inline;
+      text-align: center;
+      margin-top: 20px;
+    }
+    
+    .weather-pic {
+      width: 300px;
+      height: 300px; 
+    }
+    
+    .info {
+      font-size: 80px;
+    }
   
-  #map {
-    width: 100%;
-}
+    #map {
+      width: 100%;
+      margin: 0px;
+      margin-top: 30px;
+      float: none;
+    }
+    
+    #weather {
+      font-size: 80px;
+      text-align: center;
+      display: block;
+      
+    }
+    
+    ::placeholder {
+      visibility: hidden;
+    }
+  }
