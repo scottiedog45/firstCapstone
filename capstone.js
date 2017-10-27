@@ -111,6 +111,7 @@ function zipToData() {
         event.preventDefault();
         let zipCode = $('#user-zip-code').val();
         $('#map').addClass("slideRight");
+        $('#weather').addClass("slideLeft");
         getGeoCodingData(zipCode, displayMap);
         getWeatherInfo(zipCode, displayWeather);
     });
