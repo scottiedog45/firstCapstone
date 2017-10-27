@@ -1,19 +1,24 @@
+<!--add favicon and tab icon-->
+
 <!DOCTYPE html>
 <html>
     <head>
         <title>Piqnic</title>
+        <link href="https://fonts.googleapis.com/css?family=Saira" rel="stylesheet">
         <link href="something.css" type="text/css" rel="stylesheet">
+        <link href="animations.css" type="text/css" rel="stylesheet">
     </head>
     <body> 
         <header>
-            <h1>Piqnic</h1>
+            <h1>piqnic</h1>
         </header>
+        <p>peruse picturesque, picnic-perfect parks!</p>
         <form>
             <input type="text" id="user-zip-code" placeholder="enter zipcode here">
-            <button type="submit" id="zip-code-submit-button">find your spot!</button>
+            <button type="submit" id="zip-code-submit-button">search</button>
         </form>
         <div id="map" class="hidden"></div>
-        <div id="weather"></div>
+        <div id="weather" class="floating"></div>
         <footer>
             <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
             <script src="/Users/scottotoole/Desktop/First Capstone/something.js"></script>

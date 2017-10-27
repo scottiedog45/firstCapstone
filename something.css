@@ -1,0 +1,68 @@
+/*implement responsive design, and stack elements when in iphone*/
+
+
+body {
+  background-color: #de5454;
+  color: white;
+  font-family: 'Saira', sans-serif;
+}
+
+h1 {
+  text-align: center;
+}
+
+form {
+  text-align: center;
+}
+
+input {
+  height: 30px;
+  text-align: center;
+  font-size: 14px;
+  border-radius: 20%
+}
+
+button {
+  height: 25px;
+  margin-left: 20px;
+  border-radius: 20%;
+  background-color: white;
+  font-size: 12px;
+}
+
+p {
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+
+#map {
+  height: 200px;
+  width: 300px;
+  margin-top: 30px;
+  float: left;
+  border-radius: 3%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  text-align: center;
+}
+
+#weather {
+  text-align: center;
+  margin-top: 30px;
+}
+
+#test {
+  height: 100px;
+  width: 100px;
+  border-color: black;
+  border-style: solid;
+  background-color: red;
+  border-style: border-box;
+  visibility: hidden;
+}
+
+::placeholder {
+  text-align: center;
+}
