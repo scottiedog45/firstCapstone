@@ -1,15 +1,5 @@
 "use strict";
 
-//open weather api call url is only http, why work in both? 
-//why isn't piedmont park showing up? 
-//how to not display keys in code
-//errors when map initally tries to 
-//mobile functionality, texting picnic details to friends? 
-//not using ajax
-//$ is for things not there in the initial page load
-//es6 friendly? 
-//2 spaces vs 4 spaces
-
 var map;
 var infowindow;
 
@@ -32,7 +22,17 @@ function getWeatherInfo(zipCode, callback) {
   $.getJSON(openWeatherURL, q, callback);
 }
 
+//function getPlaceInfo(data) {
+//  let morePlaceInfoURL= 'https://maps.googleapis.com/maps/api/place/details/output?parameters'
+//  const q= {
+//    steal place ids from returned JSON file, 
+//    names come up in cute little buttons, 
+//    buttons expand a bit, then bring in the place details information. 
+//  }
+//}
+
 function displayMap(data) {
+  console.log(data);
   let returnedGeocodeInfo = data;
   let latitude = returnedGeocodeInfo.results[0].geometry.location.lat;
   let longitude = returnedGeocodeInfo.results[0].geometry.location.lng;
@@ -52,16 +52,7 @@ function displayWeather(data) {
       <p>tomorrow:</p>
       <p class= "weather-description">${returnedWeatherInfo.list[1].weather[0].main}</p>
       <img class="weather-pic" src="http://openweathermap.org/img/w/${returnedWeatherInfo.list[2].weather[0].icon}.png">
-      <p class="weather-temp">${returnedWeatherInfo.list[1].main.temp} &#8457;</p>
-      
-
-`);
-    
-    //for result loop through and do the following: main, icon, high, low, windspeed, and either day of week or date
-    //format and display results *on hard touch with iphone? scroll over with web app? 
-    //simple view in circle with day and icon and temp, then when clicked or hard touched the other informaotin comes up
-    //when mobile, just diplay first two letters of day and icon, and scoot the things when the viewport is smaller
-    
+      <p class="weather-temp">${returnedWeatherInfo.list[1].main.temp} &#8457;</p>`);
 }
 
 
@@ -104,7 +95,6 @@ function createMarker(place) {
     infowindow.open(map, this);
   });
 }
-
 
 function zipToData() {
     $('#zip-code-submit-button').on('click', function() {
