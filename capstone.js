@@ -1,4 +1,4 @@
-"use strict";
+
 
 var map;
 var infowindow;
@@ -15,21 +15,22 @@ function getGeoCodingData(zipCode, callback) {
 function getWeatherInfo(zipCode, callback) {
   let openWeatherURL = 'https://api.openweathermap.org/data/2.5/forecast?APPID=3b395129c2dab3fcfb25aa3331f82ca9'
   const q = {
-      key: '3b395129c2dab3fcfb25aa3331f82ca9',
+      key: 'AIzaSyD-tYv91i8MRlNxKN8Zwd6VQ8AN3wILIk8',
       zip: zipCode, 
       units: 'imperial'
     }
   $.getJSON(openWeatherURL, q, callback);
 }
 
-//function getPlaceInfo(data) {
-//  let morePlaceInfoURL= 'https://maps.googleapis.com/maps/api/place/details/output?parameters'
-//  const q= {
-//    steal place ids from returned JSON file, 
-//    names come up in cute little buttons, 
-//    buttons expand a bit, then bring in the place details information. 
-//  }
-//}
+
+function getPlaceDetails(callback) {
+  let getPlaceDataURL= 'https://maps.googleapis.com/maps/api/place/details/json';
+  const q = {
+    key:'AIzaSyD-tYv91i8MRlNxKN8Zwd6VQ8AN3wILIk8',
+    placid: 'ChIJbY1GCf9GQIgRmziIcrcXUXo'
+  }
+  $.getJSON(getPlaceDataURL, q, callback);
+}
 
 function displayMap(data) {
   console.log(data);
@@ -55,6 +56,9 @@ function displayWeather(data) {
       <p class="weather-temp">${returnedWeatherInfo.list[1].main.temp} &#8457;</p>`);
 }
 
+function displayPlaceDetails(data) {
+  console.log(data);
+}
 
 function initMap(a, b) {
     
@@ -65,7 +69,7 @@ function initMap(a, b) {
     zoom: 13
   });
 
-  infowindow = new google.maps.InfoWindow();
+  var infowindow = new google.maps.InfoWindow();
   var service = new google.maps.places.PlacesService(map);
   service.nearbySearch({
     location: city,
@@ -78,12 +82,13 @@ function defineMarkerLocations(results, status) {
   if (status === google.maps.places.PlacesServiceStatus.OK) {
     for (var i = 0; i < results.length; i++) {
       createMarker(results[i]);
+      console.log(results[i]);
+      getPlaceData(results[i]);
     }
   }
 }
 
 function createMarker(place) {
-  console.log(place);
   var placeLoc = place.geometry.location;
   var marker = new google.maps.Marker({
     map: map,
@@ -96,6 +101,12 @@ function createMarker(place) {
   });
 }
 
+function getPlaceData(place) {
+  let placeId = place.place_id;
+  getPlaceDetails(placeId, displayPlaceDetails);
+  
+}
+
 function zipToData() {
     $('#zip-code-submit-button').on('click', function() {
         event.preventDefault();
@@ -104,6 +115,7 @@ function zipToData() {
         $('#weather').addClass("slideLeft");
         getGeoCodingData(zipCode, displayMap);
         getWeatherInfo(zipCode, displayWeather);
+        getPlaceDetails(displayPlaceDetails);
     });
 }
 
