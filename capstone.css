@@ -27,12 +27,10 @@ input::placeholder {
 }
 
 button {
-  height: 50px;
-  width: 50px;
+  height: 60px;
+  width: 60px;
   border-radius: 50%;
-  background-color: white;
   font-size: 12px;
-  border: none;
   cursor: pointer;
   margin-top: 10px;
   margin-left: 10px;
@@ -41,21 +39,32 @@ button {
   -moz-transition:.5s;
   -webkit-transition:.5s;
   transition:.5s;
-  
+  background-color: #de5454;
+  border-style: solid;
+  text-align: center;
+  border-color: white;
+  color: white;
 }
 
 button:hover {
-  transform: scale(1.3);
-  color: #de5454;
-  background-color: #DCDCDC;
+  transform: scale(1.2);
+  color: white;
+  background-color: #de5454;
 }
 
 hr {
   width: 100px;
 }
 
-allThings {
-  justify-content: center;
+a {
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: white;
+}
+
+#weather>p {
+  margin-top: 10px;
 }
 
 .info {
@@ -63,39 +72,46 @@ allThings {
 }
 
 .hidden {
-  display: none;
+  visibility: hidden;
+}
+
+#container {
+  margin-top: 40px;
+  margin-bottom: 2%;
 }
 
 #placeInfo {
-  width: 25%;
   float: left;
-  
+  width: 22%;
+  text-align: center;
+  border-color: white;
+  border-width: 2px;
+  margin-right: 2%;
+  border-style: solid;
 }
 
 #map {
   height: 450px;
   width: 50%;
-  margin-top: 30px;
   float: left;
-  border-radius: 40%; 
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   color: black;
   text-align: center;
-/*
-  margin-left: 150px;
-  margin-right: 20px;
-*/
 }
 
-#map img {
-  border-radius: 
+#map>img {
+  height: 450px;
+  border-radius: 5%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 #weather {
-  width: 25%;
+  width: 22%;
   text-align: center;
-  margin-top: 30px;
   display: inline-block;
+  border-style: solid;
+  border-color: white;
+  border-width: 2px;
+  margin-left: 2%;
 }
 
 .weather-description {
@@ -156,11 +172,27 @@ allThings {
       float: none;
     }
     
+    #placeInfo {
+      width: 90%;
+      text-align: center;
+      border-color: white;
+      border-width: 2px;
+      margin-right: auto;
+      margin-left: auto;
+      border-style: solid;
+      font-size: 60px;
+      margin-bottom: 40px;
+      float: none;
+    } 
+    
     #weather {
       font-size: 80px;
       text-align: center;
       display: block;
-      
+      width: 90%;
+      margin-top: 40px;
+      margin-left: auto;
+      margin-right: auto;
     }
     
     ::placeholder {
