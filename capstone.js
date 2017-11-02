@@ -108,7 +108,7 @@ function createMarker(place) {
 //}
 
 function zipToData() {
-  $('#zip-code-submit-button').on('click', function() {
+  $('#zip-code-submit-button').on('click', function(event) {
     event.preventDefault();
     let zipCode = $('#user-zip-code').val();
     $('#placeInfo').html("");
