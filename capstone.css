@@ -67,6 +67,7 @@ a {
 
 .info {
   text-align: center;
+  margin-top: 10px;
 }
 
 .hidden {
@@ -74,7 +75,7 @@ a {
 }
 
 #weather>p {
-  margin-top: 10px;
+  margin-top: 18px;
 }
 
 #container {
@@ -98,15 +99,17 @@ a {
 */
 
 #map {
-  width: 500px;
+  width: 450px;
+  height: 450px;
   color: black;
   text-align: center;
-  border-radius: 5%;
+  
   float: left;
 }
 
 #map>img {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 5%;
 }
 
 #weather {
@@ -117,10 +120,11 @@ a {
   border-style: solid;
   border-color: white;
   border-width: 2px;
-  margin-left: 5%
+
 }
 
 .weather-description {
+  margin-top: 20px;
   margin-bottom: 0px;
 }
 

@@ -1,52 +1,17 @@
-HTML:
-<!-- "everything" generally speaking...invisible --> HEAD
-<!-- everything visible --> BODY
-normally async in the header, while rest of page is loading. if in footer, don't need async. browser is doing things automatically, optimizes
- 
-CSS:
-general to specific is CSS, cascade idea, gradually override
-ids at end b/c most specific
-mimic order that things/classes are visible on page
+picniq!
 
-JS:
-Defining all functions, and to kick off bring in the $'function' at the end
-host page on github to display, publish through gh pages
+Now you can easily search your vicinity for local parks in which to have a picnic, and have the current weather forecast for today and tomorrow, all with one app!
 
-OTHER NOTES/Shortcomings
-Image requests exceed quota
-Returned parks are...not all parks? 
+Summary: Searches zipcodes for parks in vicinity, and gives weather based on the zipcode submitted. 
 
-Feedback from SLACK:
--Higher resolution weather pics
-  http://erikflowers.github.io/weather-icons/ 
-  implement these with IF statements
--Only include objects that have a rating key
-  <p>piqnic user rating: ${data.result.rating}/5</p>
-  Object.hasOwnProperty...
--Fix CORS issue
-  possible solutions:
-    enable cors plugin (only works for me)
-    set up a php server?
-      -Instead of sending request to google api, send to own server
-        Issue is missing header, dev tools> network>headers
-    Why does google have certian api/cors combinations and not others? 
-      PHP
-      SQUIDMAN
-      node proxy server, BROWSER is throwing error
-    ....rewrite code...?
-    Might not be a way around
-      ex. If google doesn't offer jsonp
-      stage for animations? 
-    
--Supplementary Reading
-    SQL Injection (XSS)
-    Cross site request forgery (CSRF)
-    
+Technology used: HTML/CSS/JavaScript/jQuery
+
+Notes about commented out code:
+  Upon requesting feedback from the SLACK community and other colleagues, suggestions were made to include certain features that would give more information from an additional API request. This would be the Place Details API from Google Maps. Additional informaotin requested would be user ratings of the park, pictures of the park, and a link to the park website. 
   
-Personal Goals
--Add some sort of ::hover responsiveness between links and markers and vice verca
--Feels like local server is slow to upload changes
--outer edge spacing on divs isn't working
--more graceful 
--make header a link to refresh the page
--Move map shadow from div to actual image
+  HTML, CSS, and JS were written to accomodate this API request. Unfortunately it was realized that this API did not support a Cross-Origin-Resource-Header. I found a workaround with a Chrome plugin, but the nature of the program is unsafe and "hacky".
+  
+  I'm keeping the code as a starting point for an upgrade process after I familiarize myself with the Node.js techniques to use a server to address this issue. 
+
+
+
