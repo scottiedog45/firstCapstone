@@ -60,7 +60,6 @@ function displayPlaceDetails(data) {
   $('#placeInfo').append(`
     <a href="${data.result.url}">${data.result.name}</a>
     `);
-//    console.log(data);
 //  needs display user ratings IF data available
 //  and pictures... somehow increase api usage request
 //  possible to open pictures in lightbox?
