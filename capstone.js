@@ -7,7 +7,7 @@ function getGeoCodingData(zipCode, callback) {
   let geocodingGetURL = 'https://maps.googleapis.com/maps/api/geocode/json';
   const q = {
     address: zipCode,
-    key: 'AIzaSyCNUQkYJVOfS9CDDo82v5zYLACw7hyclb4'
+    key: 'AIzaSyDx-Yz3lqV4C7rSOd-Robzf52akypvkJKY'
     }
   $.getJSON(geocodingGetURL, q , callback);
 }
@@ -22,14 +22,14 @@ function getWeatherInfo(zipCode, callback) {
   $.getJSON(openWeatherURL, q, callback);
 }
 
-function getPlaceDetails(data, callback) {
-  let getPlaceDataURL= 'https://maps.googleapis.com/maps/api/place/details/json';
-  const q = {
-    placeid: data,
-    key:'AIzaSyD-tYv91i8MRlNxKN8Zwd6VQ8AN3wILIk8'
-  }
-  $.getJSON(getPlaceDataURL, q, callback);
-}
+//function getPlaceDetails(data, callback) {
+//  let getPlaceDataURL= 'https://maps.googleapis.com/maps/api/place/details/json';
+//  const q = {
+//    placeid: data,
+//    key:'AIzaSyD-tYv91i8MRlNxKN8Zwd6VQ8AN3wILIk8'
+//  }
+//  $.getJSON(getPlaceDataURL, q, callback);
+//}
 
 function displayMap(data) {
   let returnedGeocodeInfo = data;
@@ -84,7 +84,7 @@ function defineMarkerLocations(results, status) {
   if (status === google.maps.places.PlacesServiceStatus.OK) {
     for (var i = 0; i < results.length; i++) {
       createMarker(results[i]);
-      getPlaceData(results[i]);
+//      getPlaceData(results[i]);
     }
   }
 }
@@ -101,11 +101,11 @@ function createMarker(place) {
   });
 }
 
-function getPlaceData(place) {
-  let placeId = place.place_id;
-  console.log(placeId);
-  getPlaceDetails(placeId, displayPlaceDetails);
-}
+//function getPlaceData(place) {
+//  let placeId = place.place_id;
+//  console.log(placeId);
+//  getPlaceDetails(placeId, displayPlaceDetails);
+//}
 
 function zipToData() {
   $('#zip-code-submit-button').on('click', function() {
