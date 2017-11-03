@@ -168,6 +168,10 @@ a {
       transform: scale(1)
     }
     
+    #container {
+      display: block;
+    }
+    
     .weather-pic {
       width: 300px;
       height: 300px; 
