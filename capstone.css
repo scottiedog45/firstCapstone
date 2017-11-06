@@ -1,8 +1,22 @@
 body {
-  background-color: #de5454;
   color: white;
   font-family: 'Saira', sans-serif;
   box-sizing: border-box;
+  background-image: url(http://www.kingsagriseeds.com/wp-content/uploads/2013/12/DSC_6709.jpg);
+  background-position: fixed; 
+}
+
+header {
+  text-align: center;
+  width: 100%;
+}
+
+.info {
+  margin-bottom: 0px;
+}
+
+.info2 {
+  margin-top: 0px;
 }
 
 h1 {
@@ -39,17 +53,11 @@ button {
   -moz-transition:.5s;
   -webkit-transition:.5s;
   transition: all 1.5s ease-out;
-  background-color: #de5454;
+  background-color: transparent;
   border-style: solid;
   text-align: center;
   border-color: white;
   color: white;
-}
-
-button:hover {
-  transform: scale(1.1);
-  color: white;
-  background-color: #de5454;
 }
 
 hr {
@@ -103,16 +111,18 @@ a {
   height: 450px;
   color: black;
   text-align: center;
-  
   float: left;
+  border-style: solid;
+  border-color: white;
+  border-width: 2px;
 }
 
 #map>img {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  border-radius: 5%;
 }
 
 #weather {
+  color: black;
   width: 400px;
   text-align: center;
   display: inline-block;
@@ -120,7 +130,7 @@ a {
   border-style: solid;
   border-color: white;
   border-width: 2px;
-
+  background: rgba(255, 255, 255, 0.7);
 }
 
 .weather-description {
@@ -134,11 +144,18 @@ a {
 
 ::placeholder {
   text-align: center;
+  color: red;
 }
 
+
 @media only screen 
-  and (min-device-width : 375px) 
-  and (max-device-width : 667px) { 
+  and (min-device-width : 320px) 
+  and (max-device-width : 568px) { 
+    
+    body {
+      background-image: url(http://www.kingsagriseeds.com/wp-content/uploads/2013/12/DSC_6709.jpg);
+      background-attachment: fixed; 
+    }
     
     h1 {
       letter-spacing: 17px;
