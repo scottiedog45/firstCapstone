@@ -1,7 +1,7 @@
 "use strict";
 
-var map;
-var infowindow;
+let map;
+let infowindow;
 
 function getGeoCodingData(zipCode, callback) {
   let geocodingGetURL = 'https://maps.googleapis.com/maps/api/geocode/json';
@@ -9,7 +9,7 @@ function getGeoCodingData(zipCode, callback) {
     address: zipCode,
     key: 'AIzaSyDx-Yz3lqV4C7rSOd-Robzf52akypvkJKY'
     }
-  $.getJSON(geocodingGetURL, q , callback);
+  $.getJSON(geocodingGetURL, q, callback);
 }
 
 function getWeatherInfo(zipCode, callback) {
@@ -42,7 +42,6 @@ function displayMap(data) {
 function displayWeather(data) {
   let returnedWeatherInfo = data;
   $('#weather').removeClass('hidden');
-  console.log(data);
   $('#weather').html(
     `<p>now:</p>
     <p class= "weather-description">${returnedWeatherInfo.list[0].weather[0].main}</p>
@@ -83,6 +82,7 @@ function defineMarkerLocations(results, status) {
   if (status === google.maps.places.PlacesServiceStatus.OK) {
     for (var i = 0; i < results.length; i++) {
       createMarker(results[i]);
+      console.log(results);
 //      getPlaceData(results[i]);
     }
   }
