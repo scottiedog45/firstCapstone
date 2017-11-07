@@ -4,6 +4,7 @@ body {
   box-sizing: border-box;
   background-image: url(https://www.kingsagriseeds.com/wp-content/uploads/2013/12/DSC_6709.jpg);
   background-position: fixed; 
+  background-size: cover;
 }
 
 header {
@@ -156,6 +157,7 @@ a {
     body {
       background-image: url(http://www.kingsagriseeds.com/wp-content/uploads/2013/12/DSC_6709.jpg);
       background-attachment: fixed; 
+      background-size: cover;
     }
     
     h1 {
