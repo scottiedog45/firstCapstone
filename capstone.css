@@ -198,6 +198,10 @@ a {
     .info {
       font-size: 80px;
     }
+    
+    .info2 {
+      font-size: 60px;
+    }
   
     #map {
       width: 100%;
