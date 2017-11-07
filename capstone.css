@@ -2,7 +2,7 @@ body {
   color: white;
   font-family: 'Saira', sans-serif;
   box-sizing: border-box;
-  background-image: url(http://www.kingsagriseeds.com/wp-content/uploads/2013/12/DSC_6709.jpg);
+  background-image: url(https://www.kingsagriseeds.com/wp-content/uploads/2013/12/DSC_6709.jpg);
   background-position: fixed; 
 }
 
@@ -84,6 +84,7 @@ a {
 
 #weather>p {
   margin-top: 18px;
+  width: 100%;
 }
 
 #container {

@@ -2,13 +2,14 @@
 
 let map;
 let infowindow;
+let service;
 
 function getGeoCodingData(zipCode, callback) {
   let geocodingGetURL = 'https://maps.googleapis.com/maps/api/geocode/json';
   const q = {
     address: zipCode,
     key: 'AIzaSyDx-Yz3lqV4C7rSOd-Robzf52akypvkJKY'
-    }
+    };
   $.getJSON(geocodingGetURL, q, callback);
 }
 
@@ -18,7 +19,7 @@ function getWeatherInfo(zipCode, callback) {
     key: 'AIzaSyD-tYv91i8MRlNxKN8Zwd6VQ8AN3wILIk8',
     zip: zipCode, 
     units: 'imperial'
-    }
+    };
   $.getJSON(openWeatherURL, q, callback);
 }
 
@@ -65,12 +66,13 @@ function displayPlaceDetails(data) {
 }
 
 function initMap(a, b) {
-  var city = {lat: a, lng: b};
+  var city = new google.maps.LatLng(a,b);
+  //research this method//
   map = new google.maps.Map(document.getElementById('map'), {
     center: city,
     zoom: 13});
   infowindow = new google.maps.InfoWindow();
-  var service = new google.maps.places.PlacesService(map);
+  service = new google.maps.places.PlacesService(map);
   service.nearbySearch({
     location: city,
     radius: 500,
@@ -81,8 +83,9 @@ function initMap(a, b) {
 function defineMarkerLocations(results, status) {
   if (status === google.maps.places.PlacesServiceStatus.OK) {
     for (var i = 0; i < results.length; i++) {
-      createMarker(results[i]);
-      console.log(results);
+      var place = results[i];
+      console.log("blah", place);
+      createMarker(place);
 //      getPlaceData(results[i]);
     }
   }
@@ -90,6 +93,7 @@ function defineMarkerLocations(results, status) {
 
 function createMarker(place) {
   var placeLoc = place.geometry.location;
+  console.log(placeLoc)
   var marker = new google.maps.Marker({
     map: map,
     position: place.geometry.location
