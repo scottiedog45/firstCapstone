@@ -9,21 +9,19 @@
     <link href="animations.css" type="text/css" rel="stylesheet">
   </head>
   <body> 
-  <div class="wrapper">
     <header>
       <h1>piqnic!</h1>
       <p class="info">use piqnic! to find parks and weather conditions near you!</p>
-      <p class="info2">enter your address or zipcode below, and peruse!</p>
+      <p class="info2">enter your zipcode below, and search!</p>
+      <form>
+        <input type="text" id="user-zip-code" placeholder="ex. 12345 Willow St. NE, Atlantis, NY, 02938">
+        <button type="submit" id="zip-code-submit-button">search</button>
+      </form>
     </header>
-    <form>
-      <input type="text" id="user-zip-code" placeholder="ex. 12345 Willow St. NE, Atlantis, NY, 02938">
-      <button type="submit" id="zip-code-submit-button">peruse</button>
-    </form>
     <div id="container">
 <!--          <div id="placeInfo" class="hidden"></div>-->
-        <div id="map" class="hidden"></div>
-        <div id="weather" class="hidden"></div>
-    </div>
+      <div id="map" class="hidden"></div>
+      <div id="weather" class="hidden"></div>
     </div>
     <footer>
       <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>

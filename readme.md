@@ -1,5 +1,10 @@
 picniq!
 
+.v2:
+-bug fixes for map not being responsive or informative
+-style upgrades
+
+.v1:
 Now you can easily search your vicinity for local parks in which to have a picnic, and have the current weather forecast for today and tomorrow, all with one app!
 
 Summary: Searches zipcodes for parks in vicinity, and gives weather based on the zipcode submitted. 
