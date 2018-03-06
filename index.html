@@ -8,16 +8,20 @@
     <link href="capstone.css" type="text/css" rel="stylesheet">
     <link href="animations.css" type="text/css" rel="stylesheet">
   </head>
-  <body> 
-    <header>
+  <body>
+    <!-- <header>
       <h1>piqnic!</h1>
-      <p class="info">use piqnic! to find parks and weather conditions near you!</p>
-      <p class="info2">enter your zipcode below, and search!</p>
+    </header> -->
+    <div>
+      <p id='welcome'>Welcome to piqnic!</p>
+      <p class="info">Use picniq to find local parks and weather conditions; two picnic essentials!</p>
+      <p class="info2">Search your zipcode below.</p>
       <form>
         <input type="text" id="user-zip-code" placeholder="ex. 12345 Willow St. NE, Atlantis, NY, 02938">
-        <button type="submit" id="zip-code-submit-button">search</button>
+        <button type="submit" id="zip-code-submit-button">Search</button>
       </form>
-    </header>
+
+    </div>
     <div id="container">
 <!--          <div id="placeInfo" class="hidden"></div>-->
       <div id="map" class="hidden"></div>
@@ -27,7 +31,6 @@
       <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
       <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCNUQkYJVOfS9CDDo82v5zYLACw7hyclb4&libraries=places" type="text/javascript"></script>
       <script src="capstone.js"></script>
-    </footer> 
+    </footer>
   </body>
 </html>
-

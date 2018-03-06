@@ -17,7 +17,7 @@ function getWeatherInfo(zipCode, callback) {
   let openWeatherURL = 'https://api.openweathermap.org/data/2.5/forecast?APPID=3b395129c2dab3fcfb25aa3331f82ca9'
   const q = {
     key: 'AIzaSyD-tYv91i8MRlNxKN8Zwd6VQ8AN3wILIk8',
-    zip: zipCode, 
+    zip: zipCode,
     units: 'imperial'
     };
   $.getJSON(openWeatherURL, q, callback);
@@ -44,12 +44,12 @@ function displayWeather(data) {
   let returnedWeatherInfo = data;
   $('#weather').removeClass('hidden');
   $('#weather').html(
-    `<p>now:</p>
+    `<p class='weather-schedule'>Now:</p>
     <p class= "weather-description">${returnedWeatherInfo.list[0].weather[0].main}</p>
     <img class="weather-pic" src="http://openweathermap.org/img/w/${returnedWeatherInfo.list[1].weather[0].icon}.png">
     <p class="weather-temp">${returnedWeatherInfo.list[0].main.temp} &#8457;</p>
     <hr>
-    <p>tomorrow:</p>
+    <p class='weather-schedule'>Tomorrow:</p>
     <p class= "weather-description">${returnedWeatherInfo.list[1].weather[0].main}</p>
     <img class="weather-pic" src="http://openweathermap.org/img/w/${returnedWeatherInfo.list[2].weather[0].icon}.png">
     <p class="weather-temp">${returnedWeatherInfo.list[1].main.temp} &#8457;</p>`);
@@ -58,7 +58,8 @@ function displayWeather(data) {
 function displayPlaceDetails(data) {
   $('#placeInfo').removeClass('hidden');
   $('#placeInfo').append(`
-    <a href="${data.result.url}">${data.result.name}</a>
+    <a href='${data.result.url}">${data.result.name}</a>
+    <p>${data.result.rating}</p>
     `);
 //  needs display user ratings IF data available
 //  and pictures... somehow increase api usage request
@@ -84,7 +85,6 @@ function defineMarkerLocations(results, status) {
   if (status === google.maps.places.PlacesServiceStatus.OK) {
     for (var i = 0; i < results.length; i++) {
       var place = results[i];
-      console.log("blah", place);
       createMarker(place);
 //      getPlaceData(results[i]);
     }

@@ -4,31 +4,30 @@
 
 body {
   color: white;
-  background-color: #356a17;
+  background: linear-gradient(green, #228b2285);
   font-family: 'Saira', sans-serif;
+  margin: 0px;
 }
 
 header {
-  text-align: center;
-  background: linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,.3)), url("https://www.kingsagriseeds.com/wp-content/uploads/2013/12/DSC_6709.jpg");
-  background-position: fixed; 
-  background-size: cover;
-  padding-bottom: 10px;
+  margin-top: 0px;
+  background-color: #196519;
 }
 
 h1 {
-  text-align: center;
-  letter-spacing: 10px;
+  letter-spacing: 5px;
+  margin: 0px;
 }
 
 form {
   text-align: center;
-  margin-top: 30px;
 }
 
 input {
   width: 400px;
-  height: 30px;
+  height: 50px;
+  border: none;
+  border-radius: 5px;
   text-align: center;
   font-size: 14px;
 }
@@ -71,21 +70,30 @@ a {
 */
 
 .info {
+  font-size: .8em;
   text-align: center;
   margin-top: 10px;
   margin-bottom: 0px;
 }
 
 .info2 {
+  font-size: .8em;
   margin-top: 0px;
+  text-align: center;
 }
 
 .hidden {
   visibility: hidden;
 }
 
+.weather-schedule {
+  margin-top: 0px;
+  font-size: 1.5em;
+  margin-bottom: 0px;
+}
+
 #weather>p {
-  margin-top: 18px;
+
   width: 100%;
 }
 
@@ -110,6 +118,7 @@ a {
 */
 
 #map {
+  border-radius: 5px;
   width: 450px;
   height: 450px;
   color: black;
@@ -126,7 +135,9 @@ a {
 
 #weather {
   color: black;
-  width: 400px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 33px;
   text-align: center;
   display: inline-block;
   position: relative;
@@ -134,6 +145,13 @@ a {
   border-color: white;
   border-width: 2px;
   background: rgba(255, 255, 255, 0.7);
+  border-radius: 5px;
+}
+
+#welcome {
+  text-align: center;
+  font-size: 3em;
+  margin-bottom: 0px;
 }
 
 .weather-description {
@@ -151,10 +169,10 @@ a {
 }
 
 
-@media only screen 
-  and (min-device-width : 320px) 
-  and (max-device-width : 1024px) { 
-    
+@media only screen
+  and (min-device-width : 320px)
+  and (max-device-width : 1024px) {
+
     header {
       padding-bottom: 40px;
     }
@@ -162,14 +180,14 @@ a {
       letter-spacing: 17px;
       font-size: 100px;
     }
-    
+
     input {
       width: 700px;
       height: 100px;
       border-radius: 0;
       font-size: 50px;
     }
-    
+
     button {
       width: 200px;
       height: 200px;
@@ -181,35 +199,35 @@ a {
       margin-top: 80px;
       transition: background-color 0.3s ease;
     }
-    
+
     button:hover {
       transform: scale(1)
     }
-    
+
     #container {
       display: block;
     }
-    
+
     .weather-pic {
       width: 300px;
-      height: 300px; 
+      height: 300px;
     }
-    
+
     .info {
       font-size: 80px;
     }
-    
+
     .info2 {
       font-size: 60px;
     }
-  
+
     #map {
       width: 100%;
       height: 1100px;
       margin-top: 30px;
       float: none;
     }
-    
+
 /*
     #placeInfo {
       width: 90%;
@@ -222,8 +240,8 @@ a {
       font-size: 60px;
       margin-bottom: 40px;
       float: none;
-    } 
-    
+    }
+
 */
     #weather {
       font-size: 80px;
@@ -234,7 +252,7 @@ a {
       margin-left: auto;
       margin-right: auto;
     }
-    
+
     ::placeholder {
       visibility: hidden;
     }
